@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: puter-openai-gateway
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PUTER_API_KEY
+        sync: false
+      - key: PUTER_MODE
+        value: driver
+      - key: PUTER_API_BASE
+        sync: false
+      - key: GATEWAY_API_KEY
+        sync: false
+      - key: PUTER_TIMEOUT_MS
+        sync: false
